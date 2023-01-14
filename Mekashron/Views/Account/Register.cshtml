@@ -1,0 +1,61 @@
+﻿@model Mekashron.ViewModels.RegisterViewModel
+
+@{
+    ViewBag.Title = "User Registration";
+}
+
+<h1>User Registration</h1>
+
+<div class="row">
+    <div class="col-md-12">
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            @if (ViewBag.Success != null)
+            {
+                <div class="text-success">@ViewBag.Success</div>
+            }
+
+            @if (ViewBag.Error != null)
+            {
+                <div class="text-danger">@ViewBag.Error</div>
+            }
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstName"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mobile"></label>
+                <input asp-for="Mobile" class="form-control" />
+                <span asp-validation-for="Mobile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CountryID"></label>
+                <input asp-for="CountryID" class="form-control" />
+                <span asp-validation-for="CountryID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="aID"></label>
+                <input asp-for="aID" class="form-control" />
+                <span asp-validation-for="aID" class="text-danger"></span>
+            </div>
+            <input asp-for="SignupIP" type="hidden" />
+            <button type="submit" class="btn btn-primary mt-2">Register</button>
+        </form>
+    </div>
+</div>
